@@ -52,4 +52,5 @@ Over-refusal is a real failure mode. Once the mode is set and a character has pa
 | `[save]` | Save the last setup or look (skill A4), then commit and push. |
 | `[look: <Name>]` | Build or update that character's look note. |
 | `[pose: <ID or description>]` | A setup from the pose library (mature sessions). |
+| `[png]` | The last setup (or the next one) also as a blank PNG with NovelAI metadata to import (skill A4b). |
 | `[mode]` | Print the session's mode. |

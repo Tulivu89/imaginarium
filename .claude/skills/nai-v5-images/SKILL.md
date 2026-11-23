@@ -42,6 +42,15 @@ On "save that", `[save]` or similar:
 - Generated images go in `Images/<Name or Title>/`, mature ones in `Images/Mature/<Name or Title>/`.
 - Commit with a short message (`Looks: <name>`, `Scene: <title>`) and push.
 
+## A4b. Importable setup PNG (option)
+
+On `[png]`, or when the user asks for setups they can load straight into NovelAI, also deliver each setup as a blank PNG whose metadata holds it.
+
+- Write the setup as JSON (`base`, `uc`, `chars` with `prompt`/`uc`/`x`/`y`, settings) and run `python3 scripts/make_setup_png.py setup.json "<out>.png"`. The metadata layout is copied from a real V5 image (`scripts/nai_v5_comment_template.json`); refresh that file from a newer user image if NovelAI changes its format.
+- The seed is random unless the setup pins one. Tell the user to untick Seed on import when they want fresh seeds.
+- Saved PNGs sit beside their setup: `Scenes/<Title> - <variant>.png` (mature: `Scenes/Mature/`). Send them with SendUserFile.
+- Reading a user's image: NovelAI PNGs carry the full setup in the `Comment` text chunk (JSON: `v4_prompt`, `v4_negative_prompt`, `uc`, steps, scale, `cfg_rescale`, sampler, seed). Read it before judging a result, so the diagnosis covers what was actually run.
+
 ## A5. Pose library
 
 Mature sessions only. `references/poses/INDEX.md` explains the module format and holds the catalog of saved pose modules (empty to start).
@@ -282,7 +291,7 @@ Order: identity → head-to-toe appearance → (multi-character state) → outfi
 * **One color per feature;** repeating a color across unrelated tags bleeds.
 * **Specific tags over generic:** `colored tips`, `animal ear fluff`, `fluffy tail`.
 * **Hairstyles are combinations.** `short hair` alone is unstable; stack shape tags (`parted bangs`, `asymmetrical hair`, `bob cut`). `pixie cut` is weak and steerable; `bowl cut` overrides everything. If no combination works, describe the cut in a sentence.
-* **Faces:** distinct faces come from a coherent feature cluster plus its counter-UC (`face-kits.md`). Age tags are face-shape levers, not ages: `mature female` at `0.4::`–`0.6::` sharpens and lengthens; `teenage` softens.
+* **Faces:** distinct faces come from a coherent feature cluster plus its counter-UC (`face-kits.md`). Age tags are face-shape levers, not ages: `mature female` at `0.4::`–`0.6::` sharpens and lengthens; `teenage` softens. **Don't add one by default.** A box gets `mature female` only when a test shows the face reading too young, or when the user or a chosen face kit asks for it.
 * **Heights:** say it from one side only. Put `tall female`/`tall male` in the taller character's box and leave the other neutral; shrinking the short one gives dwarf proportions. Measurements in cm or feet do nothing. Avoid "standing next to each other" when heights differ.
 * **Kemonomimi:** `extra ears` in that character's UC against a second pair of human ears.
 * **Shared traits must be repeated** in every box that has them.

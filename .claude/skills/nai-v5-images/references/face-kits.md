@@ -28,7 +28,7 @@ girl, tall female, 0.6::mature female::, long hair, low ponytail, brown hair, br
 ```
 UC: `tareme, petite, round face, chubby cheeks, button nose, thick eyebrows`
 
-Doll (petite, round, soft) — always keep the mature female anchor
+Doll (petite, round, soft) — the mature female anchor belongs to this kit only; don't carry it to other characters
 ```
 girl, petite, 0.4::mature female::, small breasts, long hair, low ponytail, brown hair, brown eyes, tareme, long eyelashes, pink lips. Face round and soft, small rounded chin, large round eyes set wide apart, small button nose. Full rounded cheeks, gently arched eyebrows, small full mouth with pronounced cupid's bow. grey tank top
 ```
