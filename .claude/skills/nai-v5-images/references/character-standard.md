@@ -15,7 +15,7 @@ Every look note (`Characters/<Name>.md`) and every character box is built to thi
 
 | # | Slot | Contents |
 |---|---|---|
-| 1 | Identity | `girl` / `boy` / `other` first, then species or type, skin-tone tag, ONE frame tag (from a body kit below), optional age-shape lever (`0.4::mature female::`; on a very small build it can come out dwarfish and heavy, so A/B it). `dark-skinned female`/`male` for dark skin. Sentence: skin tone when no tag fits. |
+| 1 | Identity | `girl` / `boy` / `other` first, then species or type, skin-tone tag, ONE frame tag (from a body kit below). **No age-shape lever by default:** add `0.4::mature female::` only when a test shows the face reading too young, or when the user or a chosen face kit asks for it (on a very small build it can come out dwarfish and heavy, so A/B it). `dark-skinned female`/`male` for dark skin. Sentence: skin tone when no tag fits. |
 | 2 | Hair | length → style → color → color effects → bangs/sidelocks → ahoge. Sentence: the cut or color story. |
 | 3 | Hair, hidden part | Anything that shows from one angle only: undercut, shaved nape, back braid, hair tie. Own line so front views can drop it. |
 | 4 | Head extras | Animal ears + `animal ear fluff`, horns, halo, `pointy ears`. Nonhumans: muzzle or snout here. |
